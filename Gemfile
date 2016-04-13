@@ -1,4 +1,7 @@
 source 'https://rubygems.org'
 
-# Specify your gem's dependencies in megaplan_ruby.gemspec
+gem 'httparty'
+gem 'json', '>= 1.7.7'
+
+
 gemspec
