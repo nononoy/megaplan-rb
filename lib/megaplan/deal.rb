@@ -8,6 +8,12 @@ module Megaplan
         "/BumsTradeApiV01/Deal/"
       end
 
+      def find(client, query)
+        scope = list(client)
+        @arr = scope['deals']
+        super
+      end
+
     end
   end
 

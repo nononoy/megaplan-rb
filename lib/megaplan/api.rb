@@ -59,7 +59,6 @@ module Megaplan
 
       def parsed_body(res)
         body = JSON.parse(res.body) rescue {}
-        puts body
         if body["status"]["code"] != "error"
           body["data"]
         else
@@ -81,6 +80,33 @@ module Megaplan
         else
           bad_response(response, parsed_body(response), headers)
         end
+      end
+
+      def find(client, query)
+        output = []
+        @arr.each do |item|
+          success = if query.keys.all? { |x| item.keys.include? x }
+                      if query.all? { |k,v| !v.respond_to?(:keys)}
+                        query.keys.all? { |i| query[i] == item[i]} ? true : false
+                      else
+                        result = []
+                        query.keys.each do |each|
+                          result << if query[each].respond_to?(:keys)
+                                      if query[each].keys.all? { |x| item[each].keys.include? x }
+                                         query[each].keys.all?{ |i| query[each][i] == item[each][i] } ? true : false
+                                      end
+                                    else
+                                      true if query[each] == item[each]
+                                    end
+                        end
+                        result.uniq == [true] ? true : false
+                      end
+                    else
+                      false
+                    end
+          output << item if success
+        end
+        output
       end
 
       def list(client, query = {})
