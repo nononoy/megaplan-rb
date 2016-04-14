@@ -17,7 +17,7 @@ module Megaplan
     def authenticate
       response = HTTParty.get(auth_path, :query => auth_params)
       if response.success?
-        parsed_body(response)["data"]
+        parsed_body(response)
       else
         bad_response(response, parsed_body(response), auth_params)
       end
@@ -58,7 +58,13 @@ module Megaplan
     class << self
 
       def parsed_body(res)
-        JSON.parse(res.body) rescue {}
+        body = JSON.parse(res.body) rescue {}
+        puts body
+        if body["status"]["code"] != "error"
+          body["data"]
+        else
+          body
+        end
       end
 
       def to_query(params)
@@ -69,41 +75,33 @@ module Megaplan
         path + (query.any? ? "?#{to_query(query)}" : "")
       end
 
+      def check_response(response)
+        if response.success?
+          parsed_body(response)
+        else
+          bad_response(response, parsed_body(response), headers)
+        end
+      end
+
       def list(client, query = {})
         path = resource_path(client, 'list.api', query)
         headers = client.get_headers(path.gsub('https://', ''))
         response = HTTParty.get(path, :headers => headers)
-
-        if response.success?
-          parsed_body(response)
-        else
-          parsed_body(response)
-          #bad_response(response, parsed_body(response), auth_params)
-        end
+        check_response(response)
       end
 
       def save(client, query = {})
         path = resource_path(client, 'save.api', query)
         headers = client.get_headers(path.gsub('https://', ''))
         response = HTTParty.get(path, :headers => headers)
-
-        if response.success?
-          parsed_body(response)
-        else
-          bad_response(response, parsed_body(response), headers)
-        end
+        check_response(response)
       end
 
       def delete(client, query = {})
         path = resource_path(client, 'delete.api', query)
         headers = client.get_headers(path.gsub('https://', ''))
         response = HTTParty.get(path, :headers => headers)
-
-        if response.success?
-          parsed_body(response)
-        else
-          bad_response(response, parsed_body(response), headers)
-        end
+        check_response(response)
       end
 
       def resource_path(client, action_path, query = {})
@@ -117,6 +115,7 @@ module Megaplan
 
       def bad_response(response, parsed_body, params={})
         puts params.inspect
+        puts parsed_body
 
         if response.class == HTTParty::Response
           raise HTTParty::ResponseError, response
