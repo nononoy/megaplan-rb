@@ -1,9 +1,6 @@
 # Megaplan
 
-Welcome to your new gem! In this directory, you'll find the files you need to be able to package up your Ruby library into a gem. Put your Ruby code in the file `lib/megaplan`. To experiment with that code, run `bin/console` for an interactive prompt.
-Welcome to your new gem! In this directory, you'll find the files you need to be able to package up your Ruby library into a gem. Put your Ruby code in the file `lib/megaplan`. To experiment with that code, run `bin/console` for an interactive prompt.
-
-TODO: Delete this and the text above, and describe your gem
+Megaplan API on Rails
 
 ## Installation
 
@@ -23,7 +20,19 @@ Or install it yourself as:
 
 ## Usage
 
-TODO: Write usage instructions here
+    require 'megaplan'
+    client = Megaplan::Api.new(endpoint: YOUR_ENDPOINT, login: YOUR_EMAIL, password: YOUR_PASSWORD)
+    
+    Megaplan::Contractor.list(client, { query })
+    Megaplan::Deal.list(client, { query })
+    
+    Megaplan::Contractor.save(client, { query })
+    Megaplan::Deal.save(client, { query })
+    
+    Megaplan::Contractor.delete(client, { query })
+    Megaplan::Deal.delete(client, { query })
+    
+You can check some of the calls at https://help.megaplan.ru/API    
 
 ## Development
 
