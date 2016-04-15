@@ -14,6 +14,10 @@ module Megaplan
         super
       end
 
+      def list_fields(client, query = {})
+        custom_get(client, "/BumsCrmApiV01/Contractor/listFields.api", query)['Fields']
+      end
+
     end
   end
 

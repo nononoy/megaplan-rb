@@ -87,7 +87,7 @@ module Megaplan
         @arr.each do |item|
           success = if query.keys.all? { |x| item.keys.include? x }
                       if query.all? { |k,v| !v.respond_to?(:keys)}
-                        query.keys.all? { |i| query[i] == item[i]} ? true : false
+                        query.keys.all? { |i| "query[i]" == item[i]} ? true : false
                       else
                         result = []
                         query.keys.each do |each|
