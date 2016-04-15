@@ -14,6 +14,14 @@ module Megaplan
         super
       end
 
+      def programs(client, query = {})
+        custom_get(client, "/BumsTradeApiV01/Program/list.api", query)
+      end
+
+      def list_fields(client, query = {})
+        custom_get(client, "/BumsTradeApiV01/Deal/listFields.api", query)['Fields']
+      end
+
     end
   end
 

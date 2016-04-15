@@ -110,32 +110,43 @@ module Megaplan
       end
 
       def list(client, query = {})
-        path = resource_path(client, 'list.api', query)
+        path = resource_path(client, 'list.api', nil, query)
+        headers = client.get_headers(path.gsub('https://', ''))
+        response = HTTParty.get(path, :headers => headers)
+        check_response(response)
+      end
+
+      def custom_get(client, custom_path,  query = {})
+        path = resource_path(client, 'list.api', custom_path, query)
         headers = client.get_headers(path.gsub('https://', ''))
         response = HTTParty.get(path, :headers => headers)
         check_response(response)
       end
 
       def save(client, query = {})
-        path = resource_path(client, 'save.api', query)
+        path = resource_path(client, 'save.api', nil, query)
         headers = client.get_headers(path.gsub('https://', ''))
         response = HTTParty.get(path, :headers => headers)
         check_response(response)
       end
 
       def delete(client, query = {})
-        path = resource_path(client, 'delete.api', query)
+        path = resource_path(client, 'delete.api', nil, query)
         headers = client.get_headers(path.gsub('https://', ''))
         response = HTTParty.get(path, :headers => headers)
         check_response(response)
       end
 
-      def resource_path(client, action_path, query = {})
-        class_name = name.split('::').inject(Object) do |mod, class_name|
-                      mod.const_get(class_name)
-                     end
-        class_endpoint = class_name.class_endpoint
-        url = "https://#{client.initial_path}" << class_endpoint << action_path
+      def resource_path(client, action_path, custom_path, query = {})
+        if custom_path
+          url = "https://#{client.initial_path}" << custom_path
+        else
+          class_name = name.split('::').inject(Object) do |mod, class_name|
+            mod.const_get(class_name)
+          end
+          class_endpoint = class_name.class_endpoint
+          url = "https://#{client.initial_path}" << class_endpoint << action_path
+        end
         query_path(url, query)
       end
 
