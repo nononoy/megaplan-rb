@@ -117,7 +117,7 @@ module Megaplan
       end
 
       def custom_get(client, custom_path,  query = {})
-        path = resource_path(client, 'list.api', custom_path, query)
+        path = resource_path(client, nil, custom_path, query)
         headers = client.get_headers(path.gsub('https://', ''))
         response = HTTParty.get(path, :headers => headers)
         check_response(response)
