@@ -9,8 +9,8 @@ module Megaplan
       end
 
       def new(client, query = {})
-        path = resource_path(client, 'quick.api', query)
-        headers = client.get_headers(path.gsub('https://', ''))
+        path = resource_path(:get, client, 'quick.api', nil, query)
+        headers = client.get_headers(:get, path.gsub('https://', ''))
         response = HTTParty.get(path, :headers => headers)
         check_response(response)
       end

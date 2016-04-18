@@ -36,22 +36,22 @@ module Megaplan
       "#{endpoint}.megaplan.ru"
     end
 
-    def get_headers(path)
+    def get_headers(type, path)
       attrs = authenticate
       secret_key = attrs['SecretKey']
       date = Time.now.rfc2822
       { "Date"=> date,
         "Accept"=> "application/json",
         "Content-Type" => "application/json",
-        "X-Authorization" => "#{attrs['AccessId']}:#{create_signature(secret_key, date, path)}"
+        "X-Authorization" => "#{attrs['AccessId']}:#{create_signature(type, secret_key, date, path)}"
       }
     end
 
-    def create_signature(key, date, path)
+    def create_signature(type, key, date, path)
       require 'cgi'
       require 'openssl'
 
-      data = "GET\n\napplication/json\n#{date}\n#{path}"
+      data = "#{type == :get ? "GET" : "POST"}\n\napplication/json\n#{date}\n#{path}"
       Base64.strict_encode64(OpenSSL::HMAC.hexdigest('sha1', key, data))
     end
 
@@ -78,7 +78,7 @@ module Megaplan
         if response.success?
           parsed_body(response)
         else
-          bad_response(response, parsed_body(response), headers)
+          bad_response(response, parsed_body(response), (headers rescue response))
         end
       end
 
@@ -110,44 +110,54 @@ module Megaplan
       end
 
       def list(client, query = {})
-        path = resource_path(client, 'list.api', nil, query)
-        headers = client.get_headers(path.gsub('https://', ''))
-        response = HTTParty.get(path, :headers => headers)
-        check_response(response)
+        make_get_req('list.api', client, query, nil)
       end
 
-      def custom_get(client, custom_path,  query = {})
-        path = resource_path(client, nil, custom_path, query)
-        headers = client.get_headers(path.gsub('https://', ''))
-        response = HTTParty.get(path, :headers => headers)
-        check_response(response)
+      def create(client, query = {})
+        make_post_req('create.api', client, query, nil)
       end
 
       def save(client, query = {})
-        path = resource_path(client, 'save.api', nil, query)
-        headers = client.get_headers(path.gsub('https://', ''))
-        response = HTTParty.get(path, :headers => headers)
-        check_response(response)
+        make_post_req('save.api', client, query, nil)
       end
 
       def delete(client, query = {})
-        path = resource_path(client, 'delete.api', nil, query)
-        headers = client.get_headers(path.gsub('https://', ''))
+        make_post_req('delete.api', client, query, nil)
+      end
+
+      def custom_get(client, custom_path, query = {})
+        make_get_req(nil, client, query, custom_path)
+      end
+
+      def custom_post(client, custom_path, query = {})
+        make_post_req(nil, client, query, custom_path)
+      end
+
+      def make_post_req(action, client, query, custom_path)
+        path = resource_path(:post, client, action, custom_path, query)
+        headers = client.get_headers(:post, path.gsub('https://', ''))
+        response = HTTParty.post(path, :headers => headers, body: query)
+        check_response(response)
+      end
+
+      def make_get_req(action, client, query, custom_path)
+        path = resource_path(:get, client, action, custom_path, query)
+        headers = client.get_headers(:get, path.gsub('https://', ''))
         response = HTTParty.get(path, :headers => headers)
         check_response(response)
       end
 
-      def resource_path(client, action_path, custom_path, query = {})
+      def resource_path(type, client, action_path, custom_path, query = {})
         if custom_path
           url = "https://#{client.initial_path}" << custom_path
         else
           class_name = name.split('::').inject(Object) do |mod, class_name|
             mod.const_get(class_name)
           end
-          class_endpoint = class_name.class_endpoint
+          class_endpoint = class_name.class_endpoint rescue "/"
           url = "https://#{client.initial_path}" << class_endpoint << action_path
         end
-        query_path(url, query)
+        type == :get ? query_path(url, query) : url
       end
 
       def bad_response(response, parsed_body, params={})
