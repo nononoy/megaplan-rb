@@ -9,8 +9,8 @@ Gem::Specification.new do |spec|
   spec.authors       = ["Viacheslav Gruzdov"]
   spec.email         = ["lucky-@mail.ru"]
 
-  spec.summary       = "Simple Ruby Megaplan.ru gem"
-  spec.description   = "Only CRUD operations"
+  spec.summary       = "Simple Ruby shell for Megaplan.ru API"
+  spec.description   = "Megaplan on Rails"
   spec.homepage      = "https://github.com/nononoy/megaplan-rb"
   spec.license       = "MIT"
 
@@ -21,22 +21,29 @@ Gem::Specification.new do |spec|
       "Rakefile",
       "lib/megaplan.rb",
       "lib/megaplan/api.rb",
+      "lib/megaplan/checklist.rb",
       "lib/megaplan/comment.rb",
       "lib/megaplan/contractor.rb",
       "lib/megaplan/deal.rb",
       "lib/megaplan/employee.rb",
+      "lib/megaplan/event.rb",
       "lib/megaplan/favorite.rb",
       "lib/megaplan/filter.rb",
+      "lib/megaplan/history.rb",
+      "lib/megaplan/informer.rb",
       "lib/megaplan/invoice.rb",
       "lib/megaplan/message.rb",
       "lib/megaplan/offer.rb",
       "lib/megaplan/payer.rb",
       "lib/megaplan/project.rb",
+      "lib/megaplan/search.rb",
       "lib/megaplan/severity.rb",
+      "lib/megaplan/system.rb",
       "lib/megaplan/tag.rb",
       "lib/megaplan/task.rb",
       "lib/megaplan/todo_list.rb",
       "lib/megaplan/topic.rb",
+      "lib/megaplan/unit.rb",
       "lib/megaplan/user.rb",
       "lib/megaplan/version.rb",
       "megaplan.gemspec",

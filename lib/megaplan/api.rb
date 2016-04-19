@@ -67,7 +67,7 @@ module Megaplan
       end
 
       def to_query(params)
-        params.to_a.map { |x| "#{x[0]}=#{x[1]}" }.join("&")
+        params.to_a.map { |x| "#{CGI.escape(x[0])}=#{CGI.escape(x[1])}" }.join("&")
       end
 
       def query_path(path, query)
@@ -116,7 +116,6 @@ module Megaplan
       def card(client, query = {})
         make_get_req('card.api', client, query, nil)
       end
-
 
       def create(client, query = {})
         make_post_req('create.api', client, query, nil)

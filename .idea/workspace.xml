@@ -1,27 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="13c1b8cb-0324-4f40-9ddb-9756232b4757" name="Default" comment="some fixes + post method +some classes">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/megaplan/checklist.rb" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/megaplan/informer.rb" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/megaplan/unit.rb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/README.md" afterPath="$PROJECT_DIR$/README.md" />
+    <list default="true" id="13c1b8cb-0324-4f40-9ddb-9756232b4757" name="Default" comment="">
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/megaplan-0.1.1.gem" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/megaplan-0.1.0.gem" afterPath="$PROJECT_DIR$/megaplan-0.1.0.gem" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/lib/megaplan/api.rb" afterPath="$PROJECT_DIR$/lib/megaplan/api.rb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/lib/megaplan/comment.rb" afterPath="$PROJECT_DIR$/lib/megaplan/comment.rb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/lib/megaplan/contractor.rb" afterPath="$PROJECT_DIR$/lib/megaplan/contractor.rb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/lib/megaplan/deal.rb" afterPath="$PROJECT_DIR$/lib/megaplan/deal.rb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/lib/megaplan/employee.rb" afterPath="$PROJECT_DIR$/lib/megaplan/employee.rb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/lib/megaplan/event.rb" afterPath="$PROJECT_DIR$/lib/megaplan/event.rb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/lib/megaplan/favorite.rb" afterPath="$PROJECT_DIR$/lib/megaplan/favorite.rb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/lib/megaplan/history.rb" afterPath="$PROJECT_DIR$/lib/megaplan/history.rb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/lib/megaplan.rb" afterPath="$PROJECT_DIR$/lib/megaplan.rb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/lib/megaplan/payer.rb" afterPath="$PROJECT_DIR$/lib/megaplan/payer.rb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/lib/megaplan/project.rb" afterPath="$PROJECT_DIR$/lib/megaplan/project.rb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/lib/megaplan/system.rb" afterPath="$PROJECT_DIR$/lib/megaplan/system.rb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/lib/megaplan/tag.rb" afterPath="$PROJECT_DIR$/lib/megaplan/tag.rb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/lib/megaplan/task.rb" afterPath="$PROJECT_DIR$/lib/megaplan/task.rb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/lib/megaplan/topic.rb" afterPath="$PROJECT_DIR$/lib/megaplan/topic.rb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/lib/megaplan/user.rb" afterPath="$PROJECT_DIR$/lib/megaplan/user.rb" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/megaplan.gemspec" afterPath="$PROJECT_DIR$/megaplan.gemspec" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/lib/megaplan/version.rb" afterPath="$PROJECT_DIR$/lib/megaplan/version.rb" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="megaplan_ruby.iws" />
@@ -47,21 +32,41 @@
       <file leaf-file-name="api.rb" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/lib/megaplan/api.rb">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="56.666668">
-              <caret line="14" column="7" selection-start-line="14" selection-start-column="7" selection-end-line="14" selection-end-column="7" />
+            <state vertical-scroll-proportion="-5.8333335">
+              <caret line="77" column="24" selection-start-line="77" selection-start-column="24" selection-end-line="77" selection-end-column="24" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="README.md" pinned="false" current-in-tab="true">
+      <file leaf-file-name="version.rb" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/lib/megaplan/version.rb">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0">
+              <caret line="1" column="18" selection-start-line="1" selection-start-column="18" selection-end-line="1" selection-end-column="18" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="megaplan.gemspec" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/megaplan.gemspec">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.6014151">
+              <caret line="17" column="16" selection-start-line="17" selection-start-column="16" selection-end-line="17" selection-end-column="16" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="README.md" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/README.md">
           <provider editor-type-id="MultiMarkdownFxPreviewEditor">
             <state />
           </provider>
           <provider selected="true" editor-type-id="split-provider[text-editor;MultiMarkdownPreviewEditor]">
             <state split_layout="FIRST">
-              <first_editor vertical-scroll-proportion="0.5722071">
+              <first_editor vertical-scroll-proportion="0.68085104">
                 <caret line="50" column="0" selection-start-line="50" selection-start-column="0" selection-end-line="50" selection-end-column="0" />
                 <folding />
               </first_editor>
@@ -110,46 +115,6 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="version.rb" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/lib/megaplan/version.rb">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="3" column="0" selection-start-line="3" selection-start-column="0" selection-end-line="3" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="megaplan.gemspec" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/megaplan.gemspec">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="48" column="31" selection-start-line="48" selection-start-column="31" selection-end-line="48" selection-end-column="31" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="unit.rb" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/lib/megaplan/unit.rb">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="7" column="33" selection-start-line="7" selection-start-column="33" selection-end-line="7" selection-end-column="33" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="system.rb" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/lib/megaplan/system.rb">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="18" column="85" selection-start-line="18" selection-start-column="85" selection-end-line="18" selection-end-column="85" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
     </leaf>
   </component>
   <component name="Git.Settings">
@@ -160,14 +125,12 @@
       <list>
         <option value="$PROJECT_DIR$/lib/megaplan_ruby.rb" />
         <option value="$PROJECT_DIR$/lib/megaplan_ruby/base.rb" />
-        <option value="$PROJECT_DIR$/lib/megaplan/version.rb" />
         <option value="$PROJECT_DIR$/Gemfile" />
         <option value="$PROJECT_DIR$/lib/megaplan/base.rb" />
         <option value="$PROJECT_DIR$/lib/megaplan/filter.rb" />
         <option value="$PROJECT_DIR$/lib/megaplan/severity.rb" />
         <option value="$PROJECT_DIR$/megaplan_ruby.gemspec" />
         <option value="$PROJECT_DIR$/spec/megaplan_spec.rb" />
-        <option value="$PROJECT_DIR$/megaplan.gemspec" />
         <option value="$PROJECT_DIR$/lib/megaplan/search.rb" />
         <option value="$PROJECT_DIR$/lib/megaplan/comment.rb" />
         <option value="$PROJECT_DIR$/lib/megaplan/informer.rb" />
@@ -191,8 +154,10 @@
         <option value="$PROJECT_DIR$/lib/megaplan/history.rb" />
         <option value="$PROJECT_DIR$/lib/megaplan/system.rb" />
         <option value="$PROJECT_DIR$/lib/megaplan/task.rb" />
-        <option value="$PROJECT_DIR$/lib/megaplan/api.rb" />
         <option value="$PROJECT_DIR$/README.md" />
+        <option value="$PROJECT_DIR$/megaplan.gemspec" />
+        <option value="$PROJECT_DIR$/lib/megaplan/api.rb" />
+        <option value="$PROJECT_DIR$/lib/megaplan/version.rb" />
       </list>
     </option>
   </component>
@@ -247,6 +212,38 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="megaplan_ruby" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="megaplan_ruby" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="megaplan_ruby" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="lib" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="megaplan_ruby" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="megaplan_ruby" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="lib" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="megaplan" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -488,7 +485,13 @@
       <option name="project" value="LOCAL" />
       <updated>1461009421328</updated>
     </task>
-    <option name="localTasksCounter" value="11" />
+    <task id="LOCAL-00011" summary="full beta without any specs">
+      <created>1461085391967</created>
+      <option name="number" value="00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1461085391967</updated>
+    </task>
+    <option name="localTasksCounter" value="12" />
     <servers />
   </component>
   <component name="TodoView">
@@ -504,13 +507,14 @@
     <frame x="0" y="-4" width="1366" height="772" extended-state="6" />
     <editor active="false" />
     <layout>
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32986626" sideWeight="0.4969697" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.41456166" sideWeight="0.4939394" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32986626" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.31946507" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32954547" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.19772728" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.19772728" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32986626" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
@@ -519,7 +523,6 @@
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32986626" sideWeight="0.4969697" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
@@ -566,7 +569,8 @@
     <MESSAGE value="+ contractor list_fields" />
     <MESSAGE value="+events" />
     <MESSAGE value="some fixes + post method +some classes" />
-    <option name="LAST_COMMIT_MESSAGE" value="some fixes + post method +some classes" />
+    <MESSAGE value="full beta without any specs" />
+    <option name="LAST_COMMIT_MESSAGE" value="full beta without any specs" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -941,41 +945,41 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/lib/megaplan/version.rb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="3" column="0" selection-start-line="3" selection-start-column="0" selection-end-line="3" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/megaplan.gemspec">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="48" column="31" selection-start-line="48" selection-start-column="31" selection-end-line="48" selection-end-column="31" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/lib/megaplan/api.rb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="56.666668">
-          <caret line="14" column="7" selection-start-line="14" selection-start-column="7" selection-end-line="14" selection-end-column="7" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/README.md">
       <provider editor-type-id="MultiMarkdownFxPreviewEditor">
         <state />
       </provider>
       <provider selected="true" editor-type-id="split-provider[text-editor;MultiMarkdownPreviewEditor]">
         <state split_layout="FIRST">
-          <first_editor vertical-scroll-proportion="0.5722071">
+          <first_editor vertical-scroll-proportion="0.68085104">
             <caret line="50" column="0" selection-start-line="50" selection-start-column="0" selection-end-line="50" selection-end-column="0" />
             <folding />
           </first_editor>
           <second_editor />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/lib/megaplan/api.rb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-5.8333335">
+          <caret line="77" column="24" selection-start-line="77" selection-start-column="24" selection-end-line="77" selection-end-column="24" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/lib/megaplan/version.rb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="1" column="18" selection-start-line="1" selection-start-column="18" selection-end-line="1" selection-end-column="18" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/megaplan.gemspec">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.6014151">
+          <caret line="17" column="16" selection-start-line="17" selection-start-column="16" selection-end-line="17" selection-end-column="16" />
+          <folding />
         </state>
       </provider>
     </entry>
