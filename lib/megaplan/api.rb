@@ -78,7 +78,7 @@ module Megaplan
         if response.success?
           parsed_body(response)
         else
-          bad_response(response, parsed_body(response), (headers rescue response))
+          bad_response(response, parsed_body(response))
         end
       end
 
@@ -113,12 +113,21 @@ module Megaplan
         make_get_req('list.api', client, query, nil)
       end
 
+      def card(client, query = {})
+        make_get_req('card.api', client, query, nil)
+      end
+
+
       def create(client, query = {})
         make_post_req('create.api', client, query, nil)
       end
 
       def save(client, query = {})
         make_post_req('save.api', client, query, nil)
+      end
+
+      def edit(client, query = {})
+        make_post_req('edit.api', client, query, nil)
       end
 
       def delete(client, query = {})
@@ -136,14 +145,14 @@ module Megaplan
       def make_post_req(action, client, query, custom_path)
         path = resource_path(:post, client, action, custom_path, query)
         headers = client.get_headers(:post, path.gsub('https://', ''))
-        response = HTTParty.post(path, :headers => headers, body: query)
+        response = HTTParty.post(path, body: query.to_json, headers: headers)
         check_response(response)
       end
 
       def make_get_req(action, client, query, custom_path)
         path = resource_path(:get, client, action, custom_path, query)
         headers = client.get_headers(:get, path.gsub('https://', ''))
-        response = HTTParty.get(path, :headers => headers)
+        response = HTTParty.get(path, headers: headers)
         check_response(response)
       end
 
@@ -157,11 +166,10 @@ module Megaplan
           class_endpoint = class_name.class_endpoint rescue "/"
           url = "https://#{client.initial_path}" << class_endpoint << action_path
         end
-        type == :get ? query_path(url, query) : url
+        query_path(url, query)
       end
 
-      def bad_response(response, parsed_body, params={})
-        puts params.inspect
+      def bad_response(response, parsed_body)
         puts parsed_body
 
         if response.class == HTTParty::Response

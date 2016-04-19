@@ -15,7 +15,7 @@ module Megaplan
       end
 
       def list_fields(client, query = {})
-        custom_get(client, "/BumsCrmApiV01/Contractor/listFields.api", query)['Fields']
+        custom_get(client, class_endpoint + "listFields.api", query)['Fields'] rescue []
       end
 
     end

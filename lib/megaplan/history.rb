@@ -9,7 +9,7 @@ module Megaplan
       end
 
       def all(client, query = {})
-        custom_get(client, "/BumsCommonApiV01/History/all.api", query)['changes']
+        custom_get(client, class_endpoint + "all.api", query)['changes'] rescue []
       end
 
     end

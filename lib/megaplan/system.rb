@@ -4,7 +4,7 @@ module Megaplan
 
     class << self
       def datetime(client)
-        custom_get(client, "/BumsCommonApiV01/System/datetime.api")["datetime"]
+        custom_get(client, "/BumsCommonApiV01/System/datetime.api")["datetime"] rescue nil
       end
 
       def feedback(client, query)
@@ -12,11 +12,11 @@ module Megaplan
       end
 
       def currencies(client, query = {})
-        custom_get(client, "/BumsCommonApiV01/Currency/list.api", query)["currencies"]
+        custom_get(client, "/BumsCommonApiV01/Currency/list.api", query)["currencies"] rescue []
       end
 
       def taxes(client, query = {})
-        custom_get(client, "/BumsCommonApiV01/Tax/list.api", query)["taxes"]
+        custom_get(client, "/BumsCommonApiV01/Tax/list.api", query)["taxes"] rescue []
       end
     end
   end
