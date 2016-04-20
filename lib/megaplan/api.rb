@@ -67,7 +67,7 @@ module Megaplan
       end
 
       def to_query(params)
-        params.to_a.map { |x| "#{CGI.escape(x[0])}=#{CGI.escape(x[1])}" }.join("&")
+        params.to_a.map { |x| "#{CGI.escape(x[0].to_s)}=#{CGI.escape(x[1].to_s)}" }.join("&")
       end
 
       def query_path(path, query)
